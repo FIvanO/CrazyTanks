@@ -13,7 +13,7 @@ public:
 private:
 	int x;
 	int y;
-	int power;
+	int power = 1;
 	std::pair <int, int> dir; // (-1, 0) - left; (0, 1) - up; (1, 0) - right; (0, -1) - down; 
 	int type; // 1 - player, 2 - enemy
 };

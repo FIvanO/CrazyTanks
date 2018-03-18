@@ -3,7 +3,14 @@
 
 class Wall : public Drawer {
 public:
-	void draw() {
-		std::cout << "Wall" << std::endl;
-	}
+	Wall(int _w);
+	void draw();
+private:
+	void move();
+	void setSp(int _sp);
+	void setPw(int _pw);
+	int weight;
+	int x;
+	int y;
+	int type; // 1 - vertical, 2 - horizontal
 };

@@ -60,6 +60,19 @@ void PlayerTank::draw_gun() {
 	}
 }
 
+void PlayerTank::setSp(int _sp) {
+	speed = _sp;
+}
+
+void PlayerTank::setPw(int _pw) {
+
+}
+
+void PlayerTank::move() {
+	x -= T_sp_ds.find(speed)->second * dir.first;
+	y -= T_sp_ds.find(speed)->second * dir.second;
+}
+
 int PlayerTank::getX() {
 	return x;
 }
