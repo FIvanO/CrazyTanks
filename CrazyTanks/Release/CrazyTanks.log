@@ -1,0 +1,13 @@
+﻿  BattleField.cpp
+  Bullet.cpp
+  Drawer.cpp
+  EnemyTank.cpp
+  Game.cpp
+  main.cpp
+  PlayerTank.cpp
+  Wall.cpp
+  Generating code
+  All 491 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  CrazyTanks.vcxproj -> E:\FIvanO\Luxoft\CrazyTanks\Release\CrazyTanks.exe
+  CrazyTanks.vcxproj -> E:\FIvanO\Luxoft\CrazyTanks\Release\CrazyTanks.pdb (Full PDB)

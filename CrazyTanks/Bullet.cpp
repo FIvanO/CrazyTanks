@@ -30,3 +30,17 @@ void Bullet::setY(int _y) {
 void Bullet::setPw(int _pw) {
 	power = _pw;
 }
+
+int Bullet::getX() {
+	return x;
+}
+
+int Bullet::getY() {
+	return y;
+}
+
+void Bullet::setSp(int _sp) {
+
+}
+
+void Bullet::generate() {}

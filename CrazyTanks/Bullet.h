@@ -7,6 +7,10 @@ public:
 	Bullet(int _x, int _y, std::pair <int, int> _dir, int _pw, int _type);
 	void move();
 	void draw();
+	int getX();
+	int getY();
+	void generate();
+	void setSp(int _sp);
 	void setX(int _x);
 	void setY(int _y);
 	void setPw(int _pw);

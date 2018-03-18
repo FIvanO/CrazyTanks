@@ -8,15 +8,25 @@ Wall::Wall(int _w) {
 
 void Wall::draw() {
 	//std::cout << "Wall" << std::endl;
+	if (type == 1) { // vertical
+		draw_rect(x - W_size_h / 2 + move_field_r, y - weight / 2, W_size_h, weight, Gray);
+		std::swap(height, weight);
+	}
+	else { // horizontal
+		draw_rect(x - weight / 2 + move_field_r, y - W_size_h / 2, weight, W_size_h, Gray);
+	}
+}
+
+void Wall::generate() {
 	type = rand() % 2 + 1;
 	x = rand() % GF_size;
 	y = rand() % GF_size;
 	if (type == 1) { // vertical
-		if (x - W_size_h / 2 < 0) {
-			x = W_size_h / 2;
+		if (x - height / 2 < 0) {
+			x = height / 2;
 		}
-		if (x + W_size_h / 2 > GF_size) {
-			x = GF_size - W_size_h / 2;
+		if (x + height / 2 > GF_size) {
+			x = GF_size - height / 2;
 		}
 		if (y - weight / 2 < 0) {
 			y = weight / 2;
@@ -24,7 +34,6 @@ void Wall::draw() {
 		if (y + weight / 2 > GF_size) {
 			y = GF_size - weight / 2;
 		}
-		draw_rect(x - W_size_h / 2, y - weight / 2, W_size_h, weight, Gray);
 	}
 	else { // horizontal
 		if (x - weight / 2 < 0) {
@@ -33,14 +42,30 @@ void Wall::draw() {
 		if (x + weight / 2 > GF_size) {
 			x = GF_size - weight / 2;
 		}
-		if (y - W_size_h / 2 < 0) {
-			y = W_size_h / 2;
+		if (y - height / 2 < 0) {
+			y = height / 2;
 		}
-		if (y + W_size_h / 2 > GF_size) {
-			y = GF_size - W_size_h / 2;
+		if (y + height / 2 > GF_size) {
+			y = GF_size - height / 2;
 		}
-		draw_rect(x - weight / 2, y - W_size_h / 2, weight, W_size_h, Gray);
 	}
+
+}
+
+int Wall::getX() {
+	return x;
+}
+
+int Wall::getY() {
+	return y;
+}
+
+int Wall::getW() {
+	return weight;
+}
+
+int Wall::getH() {
+	return height;
 }
 
 void Wall::move() {}

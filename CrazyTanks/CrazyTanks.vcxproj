@@ -150,6 +150,7 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="EnemyTank.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayerTank.cpp" />
     <ClCompile Include="Wall.cpp" />

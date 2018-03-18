@@ -60,6 +60,11 @@ void PlayerTank::draw_gun() {
 	}
 }
 
+void PlayerTank::setDir(std::pair <int, int> d) {
+	dir = d;
+}
+
+
 void PlayerTank::setSp(int _sp) {
 	speed = _sp;
 }
@@ -83,4 +88,10 @@ int PlayerTank::getY() {
 
 std::pair <int, int> PlayerTank::getDir() {
 	return dir;
+}
+
+void PlayerTank::generate() {
+	x = GF_size / 2 - center + move_field_r;
+	y = GF_size - center;
+	dir = up;
 }

@@ -4,9 +4,11 @@
 class PlayerTank : public Tank {
 public:
 	PlayerTank(int _x, int _y, std::pair <int, int> _dir);
+	void generate();
 	void draw();
 	void move();
 	void setSp(int _sp);
+	void setDir(std::pair <int, int> d);
 	int getX();
 	int getY();
 	std::pair <int, int> getDir();

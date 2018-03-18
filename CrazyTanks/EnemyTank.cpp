@@ -68,3 +68,33 @@ int EnemyTank::getY() {
 std::pair <int, int> EnemyTank::getDir() {
 	return dir;
 }
+
+void EnemyTank::move() {
+	int d = rand() % 4 + 1;
+	if (d == 1) dir = left;
+	if (d == 2) dir = up;
+	if (d == 3) dir = right;
+	if (d == 4) dir = down;
+	x -= T_sp_ds.find(speed)->second * dir.first;
+	y -= T_sp_ds.find(speed)->second * dir.second;
+}
+
+void EnemyTank::setSp(int _sp) {
+	speed = _sp;
+}
+
+void EnemyTank::setPw(int _pw) {}
+
+void EnemyTank::generate() {
+	x = rand() % GF_size + move_field_r;
+	y = rand() % GF_size;
+	int d = rand() % 4 + 1;
+	if (d == 1) dir = left;
+	if (d == 2) dir = up;
+	if (d == 3) dir = right;
+	if (d == 4) dir = down;
+	if (x - center < move_field_r + W_size_h) x = center + move_field_r + W_size_h;
+	if (x + center > GF_size - W_size_h) x = GF_size - center + move_field_r - W_size_h;
+	if (y - center < W_size_h) y = center + W_size_h;
+	if (y + center > GF_size - W_size_h) y = GF_size - center - W_size_h;
+}

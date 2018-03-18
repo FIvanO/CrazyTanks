@@ -4,6 +4,7 @@
 //#include <utility>
 //using namespace std;
 
+#define sqr(x) ((x) * (x))
 const int T_size = 31; // minimum 29!!!
 const int Gun_base_size_w = T_size / 7; // vertical
 const int Gun_base_size_h = T_size / 8; // vertical
@@ -27,5 +28,10 @@ const int T_ds = T_size / 3;
 const std::map <int, int> T_sp_ds = { {1, T_ds}, {2, T_ds * 2}, {3, T_ds * 3} };
 const int B_ds = T_ds * 3;
 const std::map <int, int> B_pw_ds = { { 1, B_ds},{ 2, B_ds * 2},{ 3, B_ds * 3} };
-const int W_size_h = 5;
-const int GF_size = 500;
+const int W_size_w[] = { 31, 41, 51 };
+const int W_size_h = 10;
+const int GF_size = 550;
+const int Tank_dist = T_size / 2;
+const int move_field_r = 50;
+const int ET_size = 6;
+const int W_size = 3;
