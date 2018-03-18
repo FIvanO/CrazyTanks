@@ -1,8 +1,10 @@
-﻿  EnemyTank.cpp
+﻿  BattleField.cpp
+  Game.cpp
+  main.cpp
   Generating code
-  1 of 491 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    8 functions had inline decision re-evaluated but remain unchanged
+  4 of 492 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    7 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   CrazyTanks.vcxproj -> E:\FIvanO\Luxoft\CrazyTanks\Release\CrazyTanks.exe
   CrazyTanks.vcxproj -> E:\FIvanO\Luxoft\CrazyTanks\Release\CrazyTanks.pdb (Full PDB)

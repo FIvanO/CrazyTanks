@@ -1,4 +1,5 @@
 #include "BattleField.h"
+#include "Bullet.h"
 
 void BattleField::draw_all() {
 	for (auto ob : dr)
@@ -19,6 +20,23 @@ void BattleField::add_wall(Wall* w) {
 
 void BattleField::add_EnemyTank(EnemyTank* EnTn) {
 	enemy_tanks.push_back(EnTn);
+}
+
+void BattleField::shoot() {
+	for (auto et : enemy_tanks) {
+		int x;
+		int y;
+		if (et->getDir() == left || et->getDir() == right) {
+			x = et->getX() + et->getDir().first * center;
+			y = et->getY() + et->getDir().second * center;
+		}
+		else {
+			x = et->getX() - et->getDir().first * center;
+			y = et->getY() - et->getDir().second * center;
+		}
+		Drawer* bl = new Bullet(x, y, et->getDir(), 1, 1);
+		this->add_object(bl);
+	}
 }
 
 void BattleField::check_cross_ET() {

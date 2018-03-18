@@ -21,6 +21,7 @@ void Game::start() {
 	bf.check_cross_ET();
 	while (1) {
 		bf.draw_all();
+		bf.shoot();
 		int c = _getch();
 		if (c == 0 || c == 224) {
 			c = _getch();
@@ -52,8 +53,6 @@ void Game::start() {
 				x = PT->getX() - PT->getDir().first * center;
 				y = PT->getY() - PT->getDir().second * center;
 			}
-			//std::cout << "Tc: (" << PT->getX() << "," << PT->getY() << ");" << std::endl;
-			//std::cout << "x = " << x << "; y = " << y << std::endl;
 			Drawer* bl = new Bullet(x, y, PT->getDir(), 1, 1);
 			bf.add_object(bl);
 			bf.move();

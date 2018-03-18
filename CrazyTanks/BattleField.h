@@ -7,6 +7,7 @@
 class BattleField {
 public:
 	void draw_all();
+	void shoot();
 	void add_object(Drawer* ob);
 	void add_wall(Wall* w);
 	void add_EnemyTank(EnemyTank* EnTn);
