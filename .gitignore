@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+Debug
+.vs
+CrazyTanks.VC.db
+CrazyTanks.VC.VC.opendb
+ 
