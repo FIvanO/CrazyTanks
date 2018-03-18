@@ -3,13 +3,14 @@
 
 class EnemyTank : public Tank {
 public:
+	EnemyTank(int _x, int _y, std::pair <int, int> _dir);
 	void draw();
 	int getX();
 	int getY();
-	int getDir();
+	std::pair <int, int> getDir();
 private:
 	void draw_gun();
 	int x;
 	int y;
-	int dir = 0; // 0 - stop, 1 - left, 2 - up, 3 - right, 4 - down 
+	std::pair <int, int> dir; // (-1, 0) - left; (0, 1) - up; (1, 0) - right; (0, -1) - down;  
 };

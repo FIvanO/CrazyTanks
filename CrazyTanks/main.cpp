@@ -26,23 +26,35 @@
 #include "Game.h"
 #include "Consts.h"
 
-using namespace std;
+//using namespace std;
 
 int main()
 {
 
-	Drawer* dPT1 = new PlayerTank(50, 50, 1);
-	Drawer* dPT2 = new PlayerTank(100, 50, 2);
-	Drawer* dPT3 = new PlayerTank(150, 50, 3);
-	Drawer* dPT4 = new PlayerTank(200, 50, 4);
+	Drawer* dPT1 = new PlayerTank(100, 100, down);
+	Drawer* dPT2 = new PlayerTank(200, 100, right);
+	Drawer* dPT3 = new PlayerTank(300, 100, up);
+	Drawer* dPT4 = new PlayerTank(400, 100, left);
+	Drawer* dET1 = new EnemyTank(500, 100, left);
+	Drawer* dET2 = new EnemyTank(600, 100, up);
+	Drawer* dET3 = new EnemyTank(700, 100, right);
+	Drawer* dET4 = new EnemyTank(800, 100, down);
+	Drawer* dB1 = new Bullet(50, 10, up, 1, 1);
+	Drawer* dB2 = new Bullet(100, 10, right, 1, 1);
 	BattleField bf;
 	bf.add_object(dPT1);
 	bf.add_object(dPT2);
 	bf.add_object(dPT3);
 	bf.add_object(dPT4);
+	bf.add_object(dET1);
+	bf.add_object(dET2);
+	bf.add_object(dET3);
+	bf.add_object(dET4);
+	bf.add_object(dB1);
+	bf.add_object(dB2);
 	bf.draw_all();
 	ReleaseDC(myconsole, mydc);
-	cin.ignore();
+	std::cin.ignore();
 
 
 	//COLOR = RGB(60, 150, 40);

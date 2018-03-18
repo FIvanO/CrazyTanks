@@ -147,6 +147,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BattleField.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="EnemyTank.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayerTank.cpp" />

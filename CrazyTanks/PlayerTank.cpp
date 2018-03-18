@@ -4,7 +4,7 @@
 #include <Windows.h>
 
 
-PlayerTank::PlayerTank(int _x, int _y, int _dir) {
+PlayerTank::PlayerTank(int _x, int _y, std::pair <int, int> _dir) {
 	x = _x;
 	y = _y;
 	dir = _dir;
@@ -28,7 +28,7 @@ void PlayerTank::draw() {
 }
 
 void PlayerTank::draw_gun() {
-	if (dir == 1 || dir == 3) {
+	if (dir == left || dir == right) {
 		for (int i = x - Gun_base_size_h; i < x + Gun_base_size_h + 1; ++i)
 			for (int j = y - Gun_base_size_w; j < y + Gun_base_size_w + 1; ++j)
 				SetPixel(mydc, i, j, Black);
@@ -38,24 +38,24 @@ void PlayerTank::draw_gun() {
 			for (int j = y - Gun_base_size_h; j < y + Gun_base_size_h + 1; ++j)
 				SetPixel(mydc, i, j, Black);
 	}
-	if (dir == 1) {
-		for (int i = x - Gun_size_h - Gun_base_size_h; i < x; ++i)
-			for (int j = y - 1; j <= y + 1; ++j)
+	if (dir == left) {
+		for (int i = x - 2 * (Gun_size_h + 1); i < x; ++i)
+			for (int j = y - Gun_size_w; j <= y + Gun_size_w; ++j)
 				SetPixel(mydc, i, j, Black);
 	}
-	if (dir == 2 || dir == 0) {
-		for (int i = x - 1; i <= x + 1; ++i)
-			for (int j = y - Gun_size_h - Gun_base_size_h; j < y; ++j)
+	if (dir == up) {
+		for (int i = x - Gun_size_w; i <= x + Gun_size_w; ++i)
+			for (int j = y - 2 * (Gun_size_h + 1); j < y; ++j)
 				SetPixel(mydc, i, j, Black);
 	}
-	if (dir == 3) {
-		for (int i = x; i < x + Gun_size_h + Gun_base_size_h + 1; ++i)
-			for (int j = y - 1; j <= y + 1; ++j)
+	if (dir == right) {
+		for (int i = x; i < x + 2 * (Gun_size_h + 1) + 1; ++i)
+			for (int j = y - Gun_size_w; j <= y + Gun_size_w; ++j)
 				SetPixel(mydc, i, j, Black);
 	}
-	if (dir == 4) {
-		for (int i = x - 1; i <= x + 1; ++i)
-			for (int j = y; j < y + Gun_size_h + Gun_base_size_h + 1; ++j)
+	if (dir == down) {
+		for (int i = x - Gun_size_w; i <= x + Gun_size_w; ++i)
+			for (int j = y; j < y + 2 * (Gun_size_h + 1) + 1; ++j)
 				SetPixel(mydc, i, j, Black);
 	}
 }
@@ -68,6 +68,6 @@ int PlayerTank::getY() {
 	return y;
 }
 
-int PlayerTank::getDir() {
+std::pair <int, int> PlayerTank::getDir() {
 	return dir;
 }
