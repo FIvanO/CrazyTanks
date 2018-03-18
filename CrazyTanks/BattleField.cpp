@@ -95,6 +95,6 @@ void BattleField::generate() {
 }
 
 void BattleField::move() {
-	for (auto ob : dr)
-		ob->move();
+	for (auto ob : dr) 
+		ob->move();		
 }

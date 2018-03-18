@@ -1,5 +1,6 @@
 #include "EnemyTank.h"
 #include "Consts.h"
+#include "Bullet.h"
 
 EnemyTank::EnemyTank(int _x, int _y, std::pair <int, int> _dir) {
 	x = _x;
@@ -75,8 +76,21 @@ void EnemyTank::move() {
 	if (d == 2) dir = up;
 	if (d == 3) dir = right;
 	if (d == 4) dir = down;
-	x -= T_sp_ds.find(speed)->second * dir.first;
-	y -= T_sp_ds.find(speed)->second * dir.second;
+	int x1, y1;
+	if (dir == left || dir == right) {
+		x += T_sp_ds.find(speed)->second * dir.first;
+		y += T_sp_ds.find(speed)->second * dir.second;
+		x1 = x + dir.first * center;
+		y1 = y + dir.second * center;
+	}
+	else {
+		x -= T_sp_ds.find(speed)->second * dir.first;
+		y -= T_sp_ds.find(speed)->second * dir.second;
+		x1 = x - dir.first * center;
+		y1 = y - dir.second * center;
+	}
+	//Drawer* bl = new Bullet(x1, y1, dir, 1, 2);
+	//bf1->add_object(bl);
 }
 
 void EnemyTank::setSp(int _sp) {

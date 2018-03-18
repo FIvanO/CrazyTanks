@@ -42,8 +42,19 @@ void Game::start() {
 			}
 		}
 		if (c == 32) {
-			Drawer* bl = new Bullet(PT->getX() - PT->getDir().first * center, PT->getY() - PT->getDir().second * center,
-				PT->getDir(), 1, 1);
+			int x;
+			int y;
+			if (PT->getDir() == left || PT->getDir() == right) {
+				x = PT->getX() + PT->getDir().first * center;
+				y = PT->getY() + PT->getDir().second * center;
+			}
+			else {
+				x = PT->getX() - PT->getDir().first * center;
+				y = PT->getY() - PT->getDir().second * center;
+			}
+			//std::cout << "Tc: (" << PT->getX() << "," << PT->getY() << ");" << std::endl;
+			//std::cout << "x = " << x << "; y = " << y << std::endl;
+			Drawer* bl = new Bullet(x, y, PT->getDir(), 1, 1);
 			bf.add_object(bl);
 			bf.move();
 		}

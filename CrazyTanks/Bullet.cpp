@@ -16,8 +16,14 @@ void Bullet::draw() {
 }
 
 void Bullet::move() {
-	x -= B_pw_ds.find(power)->second * dir.first;
-	y -= B_pw_ds.find(power)->second * dir.second;
+	if (dir == left || dir == right) {
+		x += B_pw_ds.find(power)->second * dir.first;
+		y += B_pw_ds.find(power)->second * dir.second;
+	}
+	else {
+		x -= B_pw_ds.find(power)->second * dir.first;
+		y -= B_pw_ds.find(power)->second * dir.second;
+	}
 }
 
 void Bullet::setX(int _x) {

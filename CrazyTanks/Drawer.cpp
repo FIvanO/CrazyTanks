@@ -8,7 +8,7 @@ void Drawer::draw_rect(int x, int y, int a, int b, COLORREF col) {
 }
 
 void Drawer::draw_all_black() {
-	for (int i = move_field_r; i <= move_field_r + GF_size + W_size_h; ++i)
-		for (int j = 0; j <= GF_size; ++j)
+	for (int i = 0; i <= GF_size + 100; ++i)
+		for (int j = 0; j <= GF_size + 100; ++j)
 			SetPixel(mydc, i, j, Black);
 }
