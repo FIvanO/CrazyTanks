@@ -1,7 +1,11 @@
 #include "EnemyTank.h"
 
 void EnemyTank::draw() {
-	std::cout << "PlayerTank" << std::endl;
+	std::cout << "EnemyTank" << std::endl;
+}
+
+void EnemyTank::draw_gun() {
+
 }
 
 int EnemyTank::getX() {
