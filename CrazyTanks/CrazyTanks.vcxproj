@@ -148,9 +148,11 @@
   <ItemGroup>
     <ClCompile Include="BattleField.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Castle.cpp" />
     <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="EnemyTank.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Gold.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayerTank.cpp" />
     <ClCompile Include="Wall.cpp" />
@@ -158,10 +160,12 @@
   <ItemGroup>
     <ClInclude Include="BattleField.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Castle.h" />
     <ClInclude Include="Consts.h" />
     <ClInclude Include="Drawer.h" />
     <ClInclude Include="EnemyTank.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Gold.h" />
     <ClInclude Include="PlayerTank.h" />
     <ClInclude Include="Tank.h" />
     <ClInclude Include="Wall.h" />
